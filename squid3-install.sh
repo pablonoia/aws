@@ -11,7 +11,7 @@ if cat /etc/os-release | grep PRETTY_NAME | grep "Ubuntu 16.04"; then
     touch /etc/squid/passwd
     /bin/rm -f /etc/squid/squid.conf
     /usr/bin/touch /etc/squid/blacklist.acl
-    /usr/bin/wget --quiet --post-data="login=${pablonoia}&token=${eb71f1da46877c91f97b3cd8484c6c94cd30b8e7}" --no-check-certificate -O /etc/squid3/squid.conf https://raw.githubusercontent.com/pablonoia/aws/master/squid.conf
+    /usr/bin/wget --quiet --post-data='login=pablonoia&token=eb71f1da46877c91f97b3cd8484c6c94cd30b8e7' --no-check-certificate -O /etc/squid3/squid.conf https://raw.githubusercontent.com/pablonoia/aws/master/squid.conf
     /sbin/iptables -I INPUT -p tcp --dport 3128 -j ACCEPT
     /sbin/iptables-save
     service squid restart
@@ -22,8 +22,7 @@ elif cat /etc/*release | grep DISTRIB_DESCRIPTION | grep "Ubuntu 14.04"; then
     touch /etc/squid3/passwd
     /bin/rm -f /etc/squid3/squid.conf
     /usr/bin/touch /etc/squid3/blacklist.acl
-    /usr/bin/wget --quiet --post-data="login=${pablonoia}&token=${eb71f1da46877c91f97b3cd8484c6c94cd30b8e7}" --no-check-certificate -O /etc/squid3/squid.conf https://raw.githubusercontent.com/pablonoia/aws/master/squid.conf
-    /sbin/iptables -I INPUT -p tcp --dport 3128 -j ACCEPT
+    /usr/bin/wget --quiet --post-data='login=pablonoia&token=eb71f1da46877c91f97b3cd8484c6c94cd30b8e7' --no-check-certificate -O /etc/squid3/squid.conf https://raw.githubusercontent.com/pablonoia/aws/master/squid.conf
     /sbin/iptables-save
     service squid3 restart
     ln -s /etc/squid3 /etc/squid
@@ -37,7 +36,7 @@ elif cat /etc/os-release | grep PRETTY_NAME | grep "jessie"; then
     touch /etc/squid3/passwd
     /bin/rm -f /etc/squid3/squid.conf
     /usr/bin/touch /etc/squid3/blacklist.acl
-    /usr/bin/wget --quiet --post-data="login=${pablonoia}&token=${eb71f1da46877c91f97b3cd8484c6c94cd30b8e7}" --no-check-certificate -O /etc/squid3/squid.conf https://raw.githubusercontent.com/pablonoia/aws/master/squid.conf
+    /usr/bin/wget --quiet --post-data='login=pablonoia&token=eb71f1da46877c91f97b3cd8484c6c94cd30b8e7' --no-check-certificate -O /etc/squid3/squid.conf https://raw.githubusercontent.com/pablonoia/aws/master/squid.conf
     /sbin/iptables -I INPUT -p tcp --dport 3128 -j ACCEPT
     /sbin/iptables-save
     service squid3 restart
